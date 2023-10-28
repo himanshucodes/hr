@@ -16,7 +16,6 @@ public class CompetitiveGaming {
 
         List<Integer> sortedKeys = new ArrayList<>(playerScoreCount.keySet());
         sortedKeys.sort(Collections.reverseOrder()); // Time Complexity: O(nlog(n))
-        System.out.println(sortedKeys);
 
         int loopCount = 0;
         for (Integer key : sortedKeys) {
