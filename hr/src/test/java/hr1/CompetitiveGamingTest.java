@@ -31,7 +31,7 @@ class CompetitiveGamingTest {
     }
 
     @Test
-    @DisplayName(value="Scores [2, 4, 3, 4, 5] with Cutoff 4 Returns 5")
+    @DisplayName(value="Scores [2, 2, 3, 4, 5] with Cutoff 4 Returns 5")
     void s2_2_3_4_5Cutoff4Returns5() {
         List<Integer> scores = new ArrayList<>(5);
         scores.add(2);
@@ -42,5 +42,62 @@ class CompetitiveGamingTest {
         int cutoff = 4;
 
         assertEquals(5, competitiveGaming.numPlayers(cutoff, scores));
+    }
+
+    @Test
+    @DisplayName(value="Scores [1, 2, 3, 4, 5] with Cutoff 4 Returns 4")
+    void s1_2_3_4_5Cutoff4Returns5() {
+        List<Integer> scores = new ArrayList<>(5);
+        scores.add(1);
+        scores.add(2);
+        scores.add(3);
+        scores.add(4);
+        scores.add(5);
+        int cutoff = 4;
+
+        assertEquals(4, competitiveGaming.numPlayers(cutoff, scores));
+    }
+
+    @Test
+    @DisplayName(value="Scores [0, 0, 0, 0, 5] with Cutoff 3 Returns 1")
+    void s0_0_0_0_5Cutoff4Returns1() {
+        List<Integer> scores = new ArrayList<>(5);
+        scores.add(0);
+        scores.add(0);
+        scores.add(0);
+        scores.add(0);
+        scores.add(5);
+        int cutoff = 3;
+
+        assertEquals(1, competitiveGaming.numPlayers(cutoff, scores));
+    }
+
+    @Test
+    @DisplayName(value="Scores [10, 20, 30, 30, 50] with Cutoff 1 Returns 1")
+    void s10_20_30_40_50Cutoff1Returns1() {
+        List<Integer> scores = new ArrayList<>(5);
+        scores.add(10);
+        scores.add(20);
+        scores.add(30);
+        scores.add(30);
+        scores.add(50);
+        int cutoff = 1;
+
+        assertEquals(1, competitiveGaming.numPlayers(cutoff, scores));
+    }
+
+    @Test
+    @DisplayName(value="Scores [10, 20, 30, 40, 50, 50] with Cutoff 1 Returns 2")
+    void s10_20_30_40_50_50Cutoff1Returns1() {
+        List<Integer> scores = new ArrayList<>(6);
+        scores.add(10);
+        scores.add(20);
+        scores.add(30);
+        scores.add(40);
+        scores.add(50);
+        scores.add(50);
+        int cutoff = 1;
+
+        assertEquals(2, competitiveGaming.numPlayers(cutoff, scores));
     }
 }
