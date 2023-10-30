@@ -2,6 +2,10 @@ package hr2;
 
 import java.util.List;
 
+/**
+ * Time Complexity: O(bandwidth.size() * totalBandwidth) -> O(n * w)
+ * Space Complexity: O(bandwidth.size() + 1 * totalBandwidth + 1) -> O(n * w)
+ */
 public class BandwidthDistribution {
     public long getMaxRequests(List<Integer>bandwidths, List<Integer> requests, int totalBandwidth) {
         // Knapsack Problem
